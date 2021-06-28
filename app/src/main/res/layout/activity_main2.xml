@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
-        android:text="Welcome!"
+        android:text="@string/welcome"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="#FAE2BF"
         android:textSize="34sp"
@@ -26,7 +26,7 @@
         android:id="@+id/logOutBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log out"
+        android:text="@string/log_out"
         android:textColor="#040303"
         app:backgroundTint="#FAF7F7"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +34,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.789" />
+        app:layout_constraintVertical_bias="0.938" />
 
     <TextView
         android:id="@+id/userName"
@@ -51,4 +51,58 @@
         app:layout_constraintStart_toStartOf="@+id/heading"
         app:layout_constraintTop_toBottomOf="@+id/heading"
         app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:inputType="textNoSuggestions"
+
+        android:id="@+id/seller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="111dp"
+        android:ems="10"
+        android:hint="@string/seller_name"
+        android:textColor="#0B0A0A"
+        android:textColorHint="#0C0C0C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="135dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="119dp"
+        android:layout_marginLeft="119dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginRight="157dp"
+        android:layout_marginBottom="110dp"
+        android:text="@string/save"
+        android:textColor="#0C0C0C"
+        app:backgroundTint="#FDFCFC"
+        app:layout_constraintBottom_toTopOf="@+id/logOutBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:inputType="textNoSuggestions"
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="151dp"
+        android:layout_marginRight="151dp"
+        android:layout_marginBottom="145dp"
+        android:ems="10"
+        android:hint="@string/description"
+        android:textColorHint="#020202"
+        app:layout_constraintBottom_toTopOf="@+id/saveBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seller"
+        android:autofillHints="" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

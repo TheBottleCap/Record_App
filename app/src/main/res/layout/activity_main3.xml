@@ -38,12 +38,12 @@
         app:layout_constraintVertical_bias="0.019" />
 
     <EditText
+        android:inputType="textNoSuggestions"
         android:id="@+id/lemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Email"
-        android:inputType="textPersonName"
         android:textColorHint="#050505"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,12 +53,12 @@
         app:layout_constraintVertical_bias="0.377" />
 
     <EditText
+        android:inputType="textNoSuggestions"
         android:id="@+id/lpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPersonName"
         android:textColorHint="#040303"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

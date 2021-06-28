@@ -1,34 +1,20 @@
 package com.example.record;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.GoogleAuthProvider;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
-    private GoogleSignInClient mGoogleSignInClient;
-    private FirebaseAuth auth,fAuth;
+    private FirebaseAuth fAuth;
 
     EditText email,password;
 
@@ -47,45 +33,34 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 
-        signInBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        signInBtn.setOnClickListener(v -> {
 
-                String emailId = email.getText().toString().trim();
-                String pass = password.getText().toString().trim();
+            String emailId = email.getText().toString().trim();
+            String pass = password.getText().toString().trim();
 
-                if (emailId.isEmpty()){
-                    email.setError("Email is required");
-                    email.requestFocus();
-                    return;
-                }
-                if (pass.isEmpty()){
-                    password.setError("Password is required");
-                    password.requestFocus();
-                    return;
-                }
-                fAuth.createUserWithEmailAndPassword(emailId,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            Toast.makeText(MainActivity.this, "User added", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity3.class));
-                        }else{
-                            Toast.makeText(MainActivity.this, "user not added", Toast.LENGTH_SHORT).show();
-
-                        }
-                    }
-                });
+            if (emailId.isEmpty()){
+                email.setError("Email is required");
+                email.requestFocus();
+                return;
             }
+            if (pass.isEmpty()){
+                password.setError("Password is required");
+                password.requestFocus();
+                return;
+            }
+            fAuth.createUserWithEmailAndPassword(emailId,pass).addOnCompleteListener(task -> {
+                if (task.isSuccessful()){
+                    Toast.makeText(MainActivity.this, "User added", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+                }else{
+                    Toast.makeText(MainActivity.this, "user not added"+ Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+
+                }
+            });
         });
 
 
-        findViewById(R.id.loginTxt).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),MainActivity3.class));
-            }
-        });
+        findViewById(R.id.loginTxt).setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),MainActivity3.class)));
 
 
 
