@@ -32,8 +32,8 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(),MainActivity3.class);
-                startActivity(intent);
+                startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+                finish();
             }
         });
 
