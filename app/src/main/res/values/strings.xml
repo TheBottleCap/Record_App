@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Record.</string>
+    <string name="already_registered_login">Already Registered? Login</string>
+    <string name="login_page">Login page</string>
+</resources>
