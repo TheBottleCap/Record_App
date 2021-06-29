@@ -15,7 +15,7 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth fAuth;
-
+    public static String s="com.example.record.extra.NAME";
     EditText email,password;
 
     @Override
@@ -34,10 +34,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         signInBtn.setOnClickListener(v -> {
-
             String emailId = email.getText().toString().trim();
             String pass = password.getText().toString().trim();
-
             if (emailId.isEmpty()){
                 email.setError("Email is required");
                 email.requestFocus();
@@ -51,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
             fAuth.createUserWithEmailAndPassword(emailId,pass).addOnCompleteListener(task -> {
                 if (task.isSuccessful()){
                     Toast.makeText(MainActivity.this, "User added", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+                    Intent intent = new Intent(getApplicationContext(),MainActivity2.class);
+//                    intent.putExtra(s,email.getText().toString());
+                    startActivity(intent);
                 }else{
                     Toast.makeText(MainActivity.this, "user not added"+ Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
 
