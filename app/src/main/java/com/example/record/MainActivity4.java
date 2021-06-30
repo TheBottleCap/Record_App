@@ -53,13 +53,9 @@ public class MainActivity4 extends AppCompatActivity {
             card.setVisibility(View.VISIBLE);
         });
 
-        Intent intent = getIntent();
-        String user = intent.getStringExtra(MainActivity.s);
-        String a = _UID.substring(0,2);
+        String a = _UID.substring(0,_UID.indexOf("@"));;
 
         save.setOnClickListener(v -> {
-            Log.i(TAG, "UID value: "+a);
-
             map.put(seller.getText().toString(),description.getText().toString());
 //                now to send data to firebase database
             FirebaseDatabase.getInstance().getReference().child(a)
