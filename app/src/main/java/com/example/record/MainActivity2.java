@@ -28,39 +28,38 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        seller = findViewById(R.id.seller);
-        description = findViewById(R.id.description);
-        save = findViewById(R.id.saveBtn);
-        username = findViewById(R.id.userName);
-//        Intent intent = getIntent();
-
-
-        fAuth = FirebaseAuth.getInstance();
-        final FirebaseUser theUser = fAuth.getCurrentUser();
-        if (theUser !=null)
-            _UID = theUser.getEmail();
-
-        username.setText(_UID);
-
-        save.setOnClickListener(v -> {
-            HashMap<String,Object> map = new HashMap<>();
-            map.put(seller.getText().toString(),description.getText().toString());
-//                now to send data to firebase database
-            FirebaseDatabase.getInstance().getReference().child("User")
-                    .push()
-                    .setValue(map)
-                    .addOnCompleteListener(task -> Toast.makeText(MainActivity2.this, "Data Saved", Toast.LENGTH_SHORT).show())
-                    .addOnFailureListener(e -> Toast.makeText(MainActivity2.this, "Error Coming"+ e.toString(), Toast.LENGTH_SHORT).show());
-
-        });
-
-
-        Button logOutBtn = findViewById(R.id.logOutBtn);
-        logOutBtn.setOnClickListener(v -> {
-            FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(getApplicationContext(),MainActivity3.class));
-            finish();
-        });
+//        seller = findViewById(R.id.seller);
+//        description = findViewById(R.id.description);
+//        save = findViewById(R.id.saveBtn);
+//        username = findViewById(R.id.userName);
+////        Intent intent = getIntent();
+//
+//
+//        fAuth = FirebaseAuth.getInstance();
+//        final FirebaseUser theUser = fAuth.getCurrentUser();
+//        if (theUser !=null)
+//            _UID = theUser.getEmail();
+//
+//        username.setText(_UID);
+//
+//        save.setOnClickListener(v -> {
+//            HashMap<String,Object> map = new HashMap<>();
+//            map.put(seller.getText().toString(),description.getText().toString());
+////                now to send data to firebase database
+//            FirebaseDatabase.getInstance().getReference().child("Users")
+//                    .push()
+//                    .setValue(map)
+//                    .addOnCompleteListener(task -> Toast.makeText(MainActivity2.this, "Data Saved", Toast.LENGTH_SHORT).show())
+//                    .addOnFailureListener(e -> Toast.makeText(MainActivity2.this, "Error Coming"+ e.toString(), Toast.LENGTH_SHORT).show());
+//
+//        });
+//
+//        Button logOutBtn = findViewById(R.id.logOutBtn);
+//        logOutBtn.setOnClickListener(v -> {
+//            FirebaseAuth.getInstance().signOut();
+//            startActivity(new Intent(getApplicationContext(),MainActivity3.class));
+//            finish();
+//        });
 
     }
 }

@@ -53,7 +53,7 @@ public class MainActivity3 extends AppCompatActivity {
             fAuth.signInWithEmailAndPassword(emailId,pass).addOnCompleteListener(task -> {
                 if (task.isSuccessful()){
                     Toast.makeText(MainActivity3.this, "Logged in successful", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+                    startActivity(new Intent(getApplicationContext(),MainActivity4.class));
                 }else {
                     Toast.makeText(MainActivity3.this, "Error! "+ Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                 }

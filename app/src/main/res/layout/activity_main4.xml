@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgtwobg"
+    tools:context=".MainActivity4">
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Welcome!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#FAE2BF"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="........................................."
+        android:textColor="#FAE2BF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="352dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="44dp"
+        android:text="Add Order Details"
+        android:textColor="#432903"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+    <Button
+        android:id="@+id/popUpBtn"
+        android:layout_width="118dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/common_google_signin_btn_text_light_focused"
+        android:text="Add"
+        android:textColor="#FAF8F8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.034"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="361dp"
+        android:layout_height="297dp"
+        android:layout_marginTop="36dp"
+        app:cardBackgroundColor="#81F8F6F4"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/popUpBtn"
+        tools:visibility="invisible">
+
+        <EditText
+            android:id="@+id/seller"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="50dp"
+            android:ems="10"
+            android:hint="Seller"
+            android:inputType="textPersonName"
+            android:textColorHint="#100F0F" />
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="110dp"
+            android:ems="10"
+            android:hint="Product"
+            android:inputType="textPersonName"
+            android:textColorHint="#090909" />
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="170dp"
+            android:text="Save" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/logOutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="LogOut"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card"
+        app:layout_constraintVertical_bias="0.088" />
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/editTextTextPersonName"-->
+    <!--        android:layout_width="166dp"-->
+    <!--        android:layout_height="40dp"-->
+    <!--        android:layout_marginTop="16dp"-->
+    <!--        android:ems="10"-->
+    <!--        android:hint="@string/seller_name"-->
+    <!--        android:inputType="textPersonName"-->
+    <!--        android:textColorHint="#432903"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.436"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/textView6" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/editTextTextPersonName2"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="12dp"-->
+    <!--        android:ems="10"-->
+    <!--        android:hint="Order"-->
+    <!--        android:inputType="textPersonName"-->
+    <!--        android:textColorHint="#432903"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.422"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>
