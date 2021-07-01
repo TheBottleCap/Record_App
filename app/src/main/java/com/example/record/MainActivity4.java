@@ -27,12 +27,11 @@ public class MainActivity4 extends AppCompatActivity {
     EditText seller,description;
     Button save;
     String _UID;
+    public static final String s="com.example.record.extra.NAME";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
-
-        HashMap<String,Object> map = new HashMap<>();
 
         seller = findViewById(R.id.seller);
         description = findViewById(R.id.description);
@@ -53,9 +52,10 @@ public class MainActivity4 extends AppCompatActivity {
             card.setVisibility(View.VISIBLE);
         });
 
-        String a = _UID.substring(0,_UID.indexOf("@"));;
+        String a = _UID.substring(0,_UID.indexOf("@"));
 
         save.setOnClickListener(v -> {
+            HashMap<String,Object> map = new HashMap<>();
             map.put(seller.getText().toString(),description.getText().toString());
 //                now to send data to firebase database
             FirebaseDatabase.getInstance().getReference().child(a)
@@ -73,6 +73,12 @@ public class MainActivity4 extends AppCompatActivity {
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(getApplicationContext(),MainActivity3.class));
             finish();
+        });
+
+        findViewById(R.id.showBtn).setOnClickListener(v -> {
+            Intent intent=new Intent(getApplicationContext(),MainActivity5.class);
+            intent.putExtra(s,a);
+            startActivity(intent);
         });
 
     }
