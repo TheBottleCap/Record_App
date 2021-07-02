@@ -56,7 +56,9 @@ public class MainActivity4 extends AppCompatActivity {
 
         save.setOnClickListener(v -> {
             HashMap<String,Object> map = new HashMap<>();
-            map.put(seller.getText().toString(),description.getText().toString());
+            map.put("order",description.getText().toString());
+            map.put("topic",seller.getText().toString());
+
 //                now to send data to firebase database
             FirebaseDatabase.getInstance().getReference().child(a)
                     .push()

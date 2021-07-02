@@ -4,13 +4,9 @@ public class Model {
 
     String topic, order;
 
-    public Model(){}
+    public Model(){
 
-    public Model(String topic, String order) {
-        this.topic = topic;
-        this.order = order;
     }
-
 
 
     public String getTopic() {

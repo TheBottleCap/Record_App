@@ -3,18 +3,15 @@ package com.example.record;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -23,7 +20,7 @@ import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
 
 public class MainActivity5 extends AppCompatActivity {
     RecyclerView recyclerView;
-    DatabaseReference root,db;
+    DatabaseReference db;
     MyAdapter adapter;
     ArrayList<Model> list;
     @Override
@@ -35,8 +32,8 @@ public class MainActivity5 extends AppCompatActivity {
         String a = intent.getStringExtra(MainActivity4.s);
 
 
-        db = FirebaseDatabase.getInstance().getReference();
-        root= db.child(a);
+        db = FirebaseDatabase.getInstance().getReference().child(a);
+
 
         recyclerView = findViewById(R.id.rv);
         recyclerView.setHasFixedSize(true);
@@ -47,7 +44,7 @@ public class MainActivity5 extends AppCompatActivity {
         adapter = new MyAdapter(this,list);
         recyclerView.setAdapter(adapter);
 
-        root.addValueEventListener(new ValueEventListener() {
+        db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot ds : snapshot.getChildren()) {
@@ -55,6 +52,7 @@ public class MainActivity5 extends AppCompatActivity {
                     Log.i(TAG, "onDataChange: value of topic is: "+ Objects.requireNonNull(model).getTopic());
                     Log.i(TAG, "onDataChange: value of order is: "+Objects.requireNonNull(model).getOrder());
                     list.add(model);
+                    Log.i(TAG, "onDataChange: list value is: "+ list);
                 }
                 adapter.notifyDataSetChanged();
             }
