@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgtwobg"
+    android:background="@drawable/download"
     tools:context=".MainActivity4">
 
 
@@ -15,7 +15,7 @@
         android:layout_marginTop="36dp"
         android:text="Welcome!"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#FAE2BF"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.061"
@@ -27,7 +27,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="........................................."
         android:textColor="#FAE2BF"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -42,7 +41,7 @@
         android:layout_height="47dp"
         android:layout_marginTop="44dp"
         android:text="Add Order Details"
-        android:textColor="#432903"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,9 +53,9 @@
         android:layout_width="118dp"
         android:layout_height="36dp"
         android:layout_marginTop="8dp"
-        android:background="@color/common_google_signin_btn_text_light_focused"
+        android:background="@color/white"
         android:text="Add"
-        android:textColor="#FAF8F8"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toStartOf="@+id/textView6"
@@ -65,31 +64,32 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
         android:layout_width="361dp"
-        android:layout_height="297dp"
-        android:layout_marginTop="36dp"
-        app:cardBackgroundColor="#81F8F6F4"
+        android:layout_height="250dp"
+        android:layout_marginTop="48dp"
+        app:cardBackgroundColor="#4D314049"
         app:cardCornerRadius="20dp"
         app:cardElevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/popUpBtn"
         tools:visibility="invisible">
 
         <EditText
             android:id="@+id/seller"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="100dp"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="75dp"
             android:layout_marginTop="50dp"
             android:ems="10"
             android:hint="Seller"
             android:inputType="textPersonName"
-            android:textColorHint="#100F0F" />
+            android:textColorHint="@color/white" />
 
         <EditText
             android:id="@+id/description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="75dp"
             android:layout_marginTop="110dp"
             android:ems="10"
@@ -99,9 +99,9 @@
 
         <Button
             android:id="@+id/saveBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="130dp"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="125dp"
             android:layout_marginTop="170dp"
             android:text="Save" />
     </androidx.cardview.widget.CardView>
@@ -114,10 +114,10 @@
         android:text="LogOut"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintHorizontal_bias="0.722"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card"
-        app:layout_constraintVertical_bias="0.057" />
+        app:layout_constraintVertical_bias="0.177" />
 
     <Button
         android:id="@+id/showBtn"
@@ -126,12 +126,12 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="Show List"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/logOutBtn"
         app:layout_constraintEnd_toStartOf="@+id/logOutBtn"
-        app:layout_constraintHorizontal_bias="0.699"
+        app:layout_constraintHorizontal_bias="0.968"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card"
-        app:layout_constraintVertical_bias="0.387" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <!--    <EditText-->
     <!--        android:id="@+id/editTextTextPersonName"-->

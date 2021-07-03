@@ -7,11 +7,17 @@
     <string name="seller_name">Seller Name</string>
     <string name="description">Description</string>
     <string name="save">Save</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
     <string name="sign_up">Sign-Up</string>
     <string name="topic">Topic:</string>
     <string name="dummyasdasd" tools:ignore="DuplicateDefinition">dummyasdasd</string>
     <string name="product">Product:</string>
+    <string name="email_address">Email Address</string>
+    <string name="record">Record.</string>
+    <string name="welcome_back">Welcome back!!!</string>
+    <string name="login_to_continue">Login to continue</string>
+    <string name="login_in">Login In</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="new_user_register">New User? Register</string>
 
 </resources>

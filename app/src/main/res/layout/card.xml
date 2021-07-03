@@ -4,9 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="110dp"
     android:layout_margin="10dp"
+    android:background="@color/cardview_light_background"
     android:padding="10dp"
+    app:cardBackgroundColor="#28131313"
     app:cardCornerRadius="10dp"
-    app:cardElevation="8dp">
+    app:cardElevation="1dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,26 +16,34 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:layout_marginTop="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="5dp">
 
             <TextView
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:text="@string/topic"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:paddingStart="10dp" />
 
             <TextView
                 android:id="@+id/topic"
+                android:paddingTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="20dp"
                 android:padding="5dp"
                 android:text="@string/dummyasdasd"
+                android:textColor="@color/white"
                 android:textSize="17sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -41,15 +51,19 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="5dp">
 
             <TextView
+                android:paddingLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:text="@string/product"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:paddingStart="10dp" />
 
             <TextView
                 android:id="@+id/order"
@@ -59,6 +73,7 @@
                 android:layout_marginLeft="20dp"
                 android:padding="5dp"
                 android:text="@string/dummyasdasd"
+                android:textColor="@color/white"
                 android:textSize="17sp"
                 android:textStyle="bold" />
         </LinearLayout>
